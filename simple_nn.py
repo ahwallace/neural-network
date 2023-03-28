@@ -99,7 +99,7 @@ class nn:
 
 					zs, activations = self.feedforward(x) # Forward pass
 					
-					delta = (activations[-1] - y)*self.sigmoid_deriv(zs[-1]) # Final layer delta
+					delta = activations[-1] - y # Final layer delta
 
 					delta_w_deriv[-1] += np.matmul(delta, np.transpose(activations[-2]))
 					delta_b_deriv[-1] += delta
